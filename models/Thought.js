@@ -1,23 +1,26 @@
 const {Schema, Types , model} =  require("mongoose");
-const { Reaction } = require("./Reaction");
+const reactionSchema = require("./Reaction");
+
+
 
 const thoughtSchema = new Schema({
     thoughtText : {
         type : String,
         required  : true,
-        min : 1,
-        max : 280
+        minlength : 1,
+        maxlength : 280
     },
 
     createdAt :{
         type : Date,
         default : Date.now,
+
     },
     username : {
         type : String,
         required : true,
     },
-    reactions : [Reaction]
+    reactions : [reactionSchema]
 
 
 },
@@ -31,7 +34,7 @@ const thoughtSchema = new Schema({
 
 
 
-thoughtSchema.methods.formatTime = function formatTime () {
+thoughtSchema.methods.formatTime = function () {
     let date  =  this.createdAt
     return date.toDateString()
     }
