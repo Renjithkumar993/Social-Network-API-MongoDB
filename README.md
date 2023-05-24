@@ -27,21 +27,7 @@ To demonstrate the functionality of the social network API, a walkthrough video 
 - [MongoDB](https://www.mongodb.com/): A popular NoSQL database for handling large amounts of data with flexibility.
 - [Mongoose](https://www.npmjs.com/package/mongoose): A MongoDB ODM (Object Data Modeling) library for Node.js.
 
-## Acceptance Criteria
-
-The following acceptance criteria should be met by the API:
-
-- Users can create, update, and delete their own thoughts.
-- Users can react to other users' thoughts.
-- Users can add and remove friends from their friend list.
-
-## Future Enhancements
-
-Here are some ideas for future enhancements:
-
-- Implement authentication and authorization to secure the API.
-- Add features like user profiles, notifications, or image uploads.
-- Improve error handling and validation for robustness.
 
 
-
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
