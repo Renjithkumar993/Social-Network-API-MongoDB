@@ -28,12 +28,6 @@ const reactionSchema =  new Schema ({
 }
 )
 
-reactionSchema.methods.formatTime = function () {
-    let date  =  this.createdAt
-    return date.toDateString()
-    }
-
-
 
 
 
