@@ -1,10 +1,9 @@
-const {Schema, Types ,mongoose} =  require ("mongoose") 
-
-
+const { Schema, Types } = require('mongoose');
+const dateFormat = require('date-format');
 const reactionSchema =  new Schema ({
     reactionId : {
-        type : mongoose.Types.ObjectId,
-        default : new mongoose.Types.ObjectId()
+        type : Schema.Types.ObjectId,
+        default : new Types.ObjectId()
     },
     reactionBody : {
         type : String,
@@ -30,7 +29,4 @@ const reactionSchema =  new Schema ({
 reactionSchema.virtual("createdTime").get(function() {
     return dateFormat('yyyy-MM-dd hh:mm:ss', this.createdAt);
 })
-
-
-
 module.exports = reactionSchema

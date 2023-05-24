@@ -19,7 +19,7 @@ This project is an API for a social network web application where users can shar
 
 To demonstrate the functionality of the social network API, a walkthrough video has been created. Please watch the video to see the API in action:
 
-[Social Network API Walkthrough Video](https://example.com)
+[Social Network API Walkthrough Video](https://drive.google.com/file/d/1TFiEVDLkSZgUFJwPbz8VTXqlDlwF7AkP/view)
 
 ## Technologies Used
 
@@ -43,5 +43,5 @@ Here are some ideas for future enhancements:
 - Add features like user profiles, notifications, or image uploads.
 - Improve error handling and validation for robustness.
 
-Feel free to explore and extend the functionality of the API as per your requirements.
+
 
