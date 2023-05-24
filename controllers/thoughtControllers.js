@@ -1,5 +1,5 @@
 const { response } = require("express")
-const {Thought,User} = require("../models")
+const {Thought,User,reactionSchema} = require("../models")
 
 
 
@@ -41,7 +41,7 @@ async getsingleThought(req,res){
 async delThought(req,res){
     try{
         const thoughts = await Thought.findOneAndRemove({_id: req.params.id})
-        const user = await User.findByIdAndUpdate(
+        const user = await User.findOneAndUpdate(
             { _id : req.body.id},
             {$pull : { thoughts : thoughts._id}},
             {new : true}
@@ -54,6 +54,10 @@ async delThought(req,res){
 async addReaction (req,res){
     try {
         const thoughts = await Thought.findOneAndUpdate({_id: req.params.thoughtId},{$addToSet : { reactions : req.body} }, { runValidators: true, new: true })
+        if (!thoughts) {
+            return res.status(404).json({ message: 'No thought with that ID' });
+        }
+
          res.json(thoughts)
     }catch(err){
         res.json(err)

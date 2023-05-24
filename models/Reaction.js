@@ -27,7 +27,9 @@ const reactionSchema =  new Schema ({
     id:false
 }
 )
-
+reactionSchema.virtual("createdTime").get(function() {
+    return dateFormat('yyyy-MM-dd hh:mm:ss', this.createdAt);
+})
 
 
 

@@ -13,9 +13,6 @@ const thoughtSchema = new Schema({
     createdAt :{
         type : Date,
         default : Date.now,
-        get: function() {
-            return dateFormat('yyyy-MM-dd hh:mm:ss', this.createdAt);
-        },
 
     
     },
@@ -37,16 +34,12 @@ const thoughtSchema = new Schema({
 )
 
 
-
-thoughtSchema.methods.formatTime = function () {
-    let date  =  this.createdAt
-    return date.toDateString()
-    }
-
 thoughtSchema.virtual("reactionCount").get(function () {
     return this.reactions.length 
 })
-
+thoughtSchema.virtual("createdTime").get(function() {
+    return dateFormat('yyyy-MM-dd hh:mm:ss', this.createdAt);
+})
 
 const Thought = model("Thought",thoughtSchema)
 
